@@ -1,20 +1,20 @@
 <template>
-  <div class="adduser-box">
+  <div class="">
     <h2>Login</h2>
     <form>
-      <div class="user-box">
+      <div class="">
         <input type="text" id="firstName" required>
         <label>First name</label>
       </div>
-      <div class="user-box">
+      <div class="">
         <input type="text" id="lastName" required>
         <label>Last name</label>
       </div>
-      <div class="user-box">
+      <div class="">
         <input type="text" id="email" required>
         <label>E-Mail</label>
       </div>
-      <div class="user-box">
+      <div class="">
         <input type="password" id="password" required>
         <label>Password</label>
       </div>
@@ -44,13 +44,13 @@ export default {
       try {
         await axios({
           method: 'post',
-          url: "/api/v1/users/register",
+          url: "/api/v1/users/auth/register",
           headers: {
             'Content-Type': 'application/json'
           },
           data: {
             "firstName": document.getElementById("firstName").value,
-            "lastName": document.getElementById("lastName").value,
+            "surname": document.getElementById("lastName").value,
             "email": document.getElementById("email").value,
             "password": document.getElementById("password").value
           }
@@ -69,7 +69,7 @@ export default {
 <style>
 
 
-.adduser-box {
+.add {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -82,18 +82,18 @@ export default {
   border-radius: 10px;
 }
 
-.adduser-box h2 {
+.add h2 {
   margin: 0 0 30px;
   padding: 0;
   color: #fff;
   text-align: center;
 }
 
-.adduser-box .user-box {
+.add . {
   position: relative;
 }
 
-.adduser-box .user-box input {
+.add . input {
   width: 100%;
   padding: 10px 0;
   font-size: 16px;
@@ -104,7 +104,7 @@ export default {
   outline: none;
   background: transparent;
 }
-.adduser-box .user-box label {
+.add . label {
   position: absolute;
   top:0;
   left: 0;
@@ -115,15 +115,15 @@ export default {
   transition: .5s;
 }
 
-.adduser-box .user-box input:focus ~ label,
-.adduser-box .user-box input:valid ~ label {
+.add . input:focus ~ label,
+.add . input:valid ~ label {
   top: -20px;
   left: 0;
   color: #03e9f4;
   font-size: 12px;
 }
 
-.adduser-box form a {
+.add form a {
   position: relative;
   display: inline-block;
   padding: 10px 20px;
@@ -137,7 +137,7 @@ export default {
   letter-spacing: 4px
 }
 
-.adduser-box a:hover {
+.add a:hover {
   background: #03e9f4;
   color: #fff;
   border-radius: 5px;
@@ -147,12 +147,12 @@ export default {
   0 0 100px #03e9f4;
 }
 
-.adduser-box a span {
+.add a span {
   position: absolute;
   display: block;
 }
 
-.adduser-box a span:nth-child(1) {
+.add a span:nth-child(1) {
   top: 0;
   left: -100%;
   width: 100%;
@@ -170,7 +170,7 @@ export default {
   }
 }
 
-.adduser-box a span:nth-child(2) {
+.add a span:nth-child(2) {
   top: -100%;
   right: 0;
   width: 2px;
@@ -189,7 +189,7 @@ export default {
   }
 }
 
-.adduser-box a span:nth-child(3) {
+.add a span:nth-child(3) {
   bottom: 0;
   right: -100%;
   width: 100%;
@@ -208,7 +208,7 @@ export default {
   }
 }
 
-.adduser-box a span:nth-child(4) {
+.add a span:nth-child(4) {
   bottom: -100%;
   left: 0;
   width: 2px;

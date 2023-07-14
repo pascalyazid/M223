@@ -15,17 +15,9 @@
         <label>E-Mail</label>
       </div>
       <a @click="updateUser()">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
         Submit
       </a><br>
       <a href="/">
-        <span></span>
-        <span></span>
-        <span></span>
-        <span></span>
         Go Back
       </a>
     </form>

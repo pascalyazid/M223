@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div>
+      <button @click="logout()">Log out</button>
+    </div>
     <table>
       <thead>
       <tr>
@@ -92,12 +95,17 @@ export default {
         console.error(error);
       }
     },
+    logout () {
+      localStorage.clear();
+      window.location.href = '/login';
+}
+
+},
     editAccount: async function(){
       const response = await axios.get("/api/v1/users/id", config);
       console.log(response)
       window.location.href = '/editUser/' + response.data;
     }
-  }
 
 };
 
@@ -114,11 +122,11 @@ export default {
 }
 
 .notAccepted {
-  background-color: rgba(248, 81, 81, 0.5);
+  background-color: skyblue;
 }
 
 .notAccepted:hover {
-  background-color: #fa7c73;
+  background-color: lightskyblue;
 }
 
 h3 {
@@ -146,11 +154,11 @@ th, td {
   border-bottom: 1px solid #ddd;
 }
 th {
-  background-color: #f2f2f2;
+  background-color: lightsalmon;
 }
 
 .delete-button {
-  background-color: #f44336;
+  background-color: gray;
   color: white;
   border: none;
   padding: 6px 12px;
